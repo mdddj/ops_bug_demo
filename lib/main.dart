@@ -29,6 +29,7 @@ class _MyAppState extends State<MyApp> {
                 width: MediaQuery.of(context).size.width,
                 child: ListViewObserver(
                   controller: _ss,
+                  customTargetRenderSliverType: (p0) => true,
                   child: LoadingMoreList<String>(ListConfig(itemBuilder: (context, item, index) {
                     return Container(
                       margin: const EdgeInsets.all(12),
