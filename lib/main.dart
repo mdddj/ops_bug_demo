@@ -76,6 +76,7 @@ class _MyAppState extends State<MyApp> {
 class _SourceRepository extends LoadingModel<String> {
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
+    await Future.delayed(const Duration(seconds: 3));
     addAll(List.generate(100, (index) => "$index"));
     return true;
   }
@@ -92,7 +93,5 @@ class _State extends Model {
   Future<void> to(int index) async {
     _ss.animateTo(index: index, duration: const Duration(milliseconds: 300), curve: Curves.linear);
     // 添加后不能跳转
-    // _index = index;
-    // notifyListeners();
   }
 }
